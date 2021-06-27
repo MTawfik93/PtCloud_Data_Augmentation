@@ -99,11 +99,11 @@ def Jitter_noise(sigma, clip):
     jittered_point += pcd_xyz
     result_xyz = np.concatenate((pcd_xyz, jittered_point), axis=0)
     
-    new_pcd = o3d.geometry.PointCloud()
-    new_pcd.points = o3d.utility.Vector3dVector(result_xyz)
-    new_pcd.colors = o3d.utility.Vector3dVector(full_rgb)
+    Jitter_pcd = o3d.geometry.PointCloud()
+    Jitter_pcd.points = o3d.utility.Vector3dVector(result_xyz)
+    Jitter_pcd.colors = o3d.utility.Vector3dVector(full_rgb)
     
-    return new_pcd
+    return Jitter_pcd
 
 # Translate Scaled Function to the Ground; In case the object is needed on the ground plane after scaling.
 
